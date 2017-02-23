@@ -12,9 +12,14 @@ app.controller('main', function($scope, $http) {
     $scope.sendMsg = function() {
         msg = $scope.messageInput
         socket.emit('send message', msg)
-        $scope.messages.push(msg)
+        //$scope.messages.push(msg)
         $scope.messageInput = null
     }
+
+    socket.on('new message', function (data){
+      $scope.messages.push(data.msg)
+      $scope.$apply() 
+    });
 })
 
 app.directive('messageLog', function() {
