@@ -8,8 +8,12 @@ var users = [],
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile('index.html')
 })
+
+app.set('port', (process.env.PORT || 5000));
+
+server.listen(app.get('port'));
 
 app.get('/connections', (req, res) => {
     res.send({
@@ -28,12 +32,8 @@ io.sockets.on('connection', (socket) => {
 
     // send message
     socket.on('send message', (msgData) => {
-        io.sockets.emit('new message', {msg: msgData})
+        io.sockets.emit('new message', {
+            msg: msgData
+        })
     })
 })
-
-app.set('port', (process.env.PORT || 5000));
-
-app.listen(app.get('port'), () => {
-    console.log("Node app is running; http://localhost:" + app.get('port'))
-});
