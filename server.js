@@ -5,7 +5,7 @@ var express = require('express'),
 var users = [],
     connections = [];
 
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public'))
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
@@ -31,6 +31,8 @@ io.sockets.on('connection', (socket) => {
         io.sockets.emit('new message', {msg: msgData})
     })
 })
+
+app.set('port', (process.env.PORT || 5000));
 
 app.listen(app.get('port'), () => {
     console.log("Node app is running; http://localhost:" + app.get('port'))
