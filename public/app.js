@@ -45,7 +45,7 @@ app.controller('main', function($scope, $http, $firebaseArray) {
     }
     
     // Init Firebase connection
-    //var fireRef = new Firebase(url)
+    var fireRef = firebase.database().ref()
     //$scope.messages = $firebaseArray(fireRef)
 })
 

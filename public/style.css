@@ -31,3 +31,8 @@
 .mdl-card {
     min-height: 0;
 }
+
+input[type="text"] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
