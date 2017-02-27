@@ -1,5 +1,5 @@
 {
-  "name": "socket.io_chat",
+  "name": "Chat With Nate",
   "version": "1.0.0",
   "description": "Simple web-app chat",
   "engines": {
@@ -12,10 +12,7 @@
   "author": "Nate Ben",
   "license": "MIT",
   "dependencies": {
-    "angularfire": "^2.3.0",
     "express": "*",
-    "firebase": "^3.6.10",
-    "firebase-admin": "^4.1.1",
     "socket.io": "*"
   },
   "repository": {
