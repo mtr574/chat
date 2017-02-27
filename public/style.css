@@ -1,0 +1,33 @@
+.header {
+    padding: 2em 1.2em;
+    background: rgba(51, 51, 51, 0.06);
+}
+
+.header .title {
+    font-family: 'Sansita', sans-serif;
+    font-size: 22px;
+    vertical-align: super;
+    text-align: center;
+    padding: 10px;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+.msg_box {
+    position: fixed;
+    padding: 0 18px;
+    width: 100%;
+    left: 0;
+    bottom: 15px;
+}
+
+.block-center {
+    margin: 0 auto;
+}
+
+.mdl-card {
+    min-height: 0;
+}

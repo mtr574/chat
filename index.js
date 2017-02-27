@@ -2,22 +2,17 @@ var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
     io = require('socket.io').listen(server)
-redis = require('redis');
+
+// Firebase
+// var admin = require("firebase-admin");
+// 
+// admin.initializeApp({
+//     credential: admin.credential.applicationDefault(),
+//     databaseURL: "https://chatwithnate-1334f.firebaseio.com"
+// });
+
 var users = [],
     connections = [];
-
-// Redis client
-var port = '6379',
-host = process.env.REDIS_URL;
-if (process.env.NODE_ENV === 'production') {
-  port = '28829',
-  host = process.env.REDIS_URL
-}
-var client = redis.createClient(port, host);
-// Error handler
-client.on('error', function(err) {
-    console.log("Error " + err);
-});
 
 app.use(express.static(__dirname + '/public'))
 

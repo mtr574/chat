@@ -12,8 +12,10 @@
   "author": "Nate Ben",
   "license": "MIT",
   "dependencies": {
+    "angularfire": "^2.3.0",
     "express": "*",
-    "redis": "^2.6.5",
+    "firebase": "^3.6.10",
+    "firebase-admin": "^4.1.1",
     "socket.io": "*"
   },
   "repository": {
